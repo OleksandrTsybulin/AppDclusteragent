@@ -13,14 +13,14 @@ spec:
   ### Uncomment the following line if you need pull secret
   #imagePullSecret: "<your-docker-pull-secret-name>"
   nsToMonitorRegex: default
-  #nsToInstrumentRegex: default
+  nsToInstrumentRegex: default
   stdoutLogging: "true"
-  #instrumentationMethod: Env
-  #appNameStrategy: label
+  instrumentationMethod: Env
+  appNameStrategy: label
   #logLevel: DEBUG
-  #instrumentationRules:
-  #  - language: nodejs 
-  #    appNameLabel: app
-  #    imageInfo:
-  #      image: "docker.io/appdynamics/nodejs-agent:21.6.0-16-stretch-slim"
-  #      agentMountPath: /opt/appdynamics
+  instrumentationRules:
+    - language: nodejs 
+      appNameLabel: app
+      imageInfo:
+        image: "docker.io/appdynamics/nodejs-agent:21.6.0-16-stretch-slim"
+        agentMountPath: /opt/appdynamics
