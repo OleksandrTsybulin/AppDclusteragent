@@ -5,8 +5,8 @@ metadata:
   namespace: appdynamics
 spec:
   appName: "K8s"
-  controllerUrl: "https://greennetworksllc-nfr.saas.appdynamics.com:443"
-  account: "greennetworksllc-nfr"
+  controllerUrl: "http://10.60.40.122:8090"
+  account: "customer1"
   # docker image info
   image: "appdynamics/cluster-agent"
   serviceAccountName: appdynamics-cluster-agent
@@ -19,8 +19,10 @@ spec:
   appNameStrategy: label
   #logLevel: DEBUG
   instrumentationRules:
-    - language: nodejs 
+    - language: dotnetcore
       appNameLabel: app
+      namespaceRegex: default
+      appName: Openshift
       imageInfo:
-        image: "docker.io/appdynamics/nodejs-agent:21.6.0-16-stretch-slim"
+        image: "docker.io/appdynamics/dotnet-core-agent:21.9.1"
         agentMountPath: /opt/appdynamics
